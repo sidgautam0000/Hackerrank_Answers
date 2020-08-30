@@ -1,0 +1,32 @@
+import java.util.*;
+public class hack2{
+    public static void main(String[] args){
+        Scanner sid=new Scanner(System.in);
+        int t=sid.nextInt();
+        int[][] a=new int[t][3];
+        for(int i=0;i<t;i++){
+            a[i][0]=sid.nextInt();
+            a[i][1]=sid.nextInt();
+            a[i][2]=sid.nextInt();
+        }
+        int l=0;
+        for(int i=0;i<t;i++){
+            int n=a[i][0],c=a[i][1],m=a[i][2];
+            int ch=n/c;
+            int wr=ch,z=0,k=0;l=ch;
+            for(int j=0;wr>=m;j++){
+                if(wr>=m){
+                    k=wr/m;
+                    z=wr%m;
+                    l=l+k;ch=k;
+                }
+                if(ch>0){
+                    wr=ch+z;
+                    ch=0;
+                }
+            }
+            System.out.println(l);
+        }
+
+    }
+}
